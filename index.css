@@ -1,5 +1,15 @@
 /* wrap이 body가운데 오도록 미리 설정 */
 
+/* header =2% */
+/* footer = 8% */
+/* section = 90% */
+    /* best 15% */
+    /*  new 15% */
+    /* recommand 15%  */
+    /* information 15% */
+    /* review 20% */
+    /* 나머지 10% 혹시모르게 쓸 부분 */
+
 :root {
     --basic_text: rgb(252, 171, 166);
     --border_basic_1: rgb(214, 214, 214);
@@ -31,7 +41,7 @@ section들이 움직인다 */
 .wrap {
     width: 1900px;
     height: 4000px;
-    background-color: white;
+    background-color: black;
     /* border: 2px solid; */
     display: flex;
     align-items: center;
@@ -111,6 +121,7 @@ nav {
     align-items: center;
     position: relative;
     gap: 25px;
+    box-sizing: border-box;
 }
 
 .nav_menu {
@@ -224,6 +235,7 @@ section {
     box-sizing: border-box;
     /* 이 div를 기준으로 ad_next_button을 계속 고정시킬꺼암 */
     position: relative;
+  
 }
 
 .ad {
@@ -234,7 +246,7 @@ section {
     left: calc(30% - 50px);
     scroll-behavior: auto;
     overflow: scroll;
-
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .ad::-webkit-scrollbar {
@@ -289,35 +301,7 @@ section {
     background-color: var(--basic_text_2);
 }
 
-/* .next_slide_box div img{
-    width: 900px;
-    height: auto;
-} */
 
-
-
-/* .next_slide_box>div:nth-of-type(-N+3) {
-    width: 20px;
-    height: 20px;
-    color: white;
-    background-color: white;
-    position: absolute;
-    border-radius: 10px;
-} */
-
-/* .next_slide_box>div:nth-of-type(1) {
-    left: 30px;
-}
-
-.next_slide_box>div:nth-of-type(2) {
-    left: 30px;
-
-}
-
-.next_slide_box>div:nth-of-type(1) {
-    left: 60px;
-
-} */
 /* best item */
 
 .best_item_list_wrap {
@@ -330,7 +314,7 @@ section {
     justify-content: flex-start;
     align-items: center;
     background-color: white;
-
+    box-sizing: border-box;
 }
 
 .best_item_list_title {
@@ -433,7 +417,7 @@ section {
     justify-content: flex-start;
     align-items: center;
     background-color: white;
-
+    box-sizing: border-box;
 
 }
 
@@ -529,17 +513,31 @@ section {
 /* editor */
 .editor_recommand {
     width: 100%;
-    height: 35%;
+    height: 20%;
     background-color: var(--border_basic_1);
-    color: brown;
+    /* color: brown; */
     font-family: 'IBM Plex Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+.editor_recommand_title {
+    width: 100%;
+    height: calc(7%);
+    background-color: white;
+    color: var(--basic_color_1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    border-top: 2px solid var(--basic_color_1);
+    border-bottom: 1px solid var(--basic_color_1);
+    font-weight: 500;
 }
 
 .editor_recommand_1_wrap {
     border-top: 1px solid black;
     background-color: white;
     width: 100%;
-    height: 50%;
+    height: calc(93% - 2px);
 }
 
 .editor_recommand_1 {
@@ -571,20 +569,7 @@ section {
     background-color: var(--basic_text_2);
 }
 
-/* .editor_recommand_video_block_2{
-    width: calc(100% + 8px);
-    height: 20%;
-    background-color: var(--basic_text);
-    position: absolute;
-    bottom: 0;
-} */
-/* .editor_recommand_video_block_1{
-    width: 100%;
-    height: 20%;
-    background-color: var(--basic_text);
-    position: absolute;
-    top: 0;
-} */
+
 .editor_recommand_content {
     width: 44%;
     height: 100%;
@@ -682,33 +667,30 @@ section {
 }
 
 
-.editor_recommand_title {
-    width: 100%;
-    height: calc(5%);
-    background-color: white;
-    color: var(--basic_color_1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5em;
-    border-top: 2px solid var(--basic_color_1);
-    border-bottom: 1px solid var(--basic_color_1);
-    font-weight: 500;
-}
-
-
-/* cat information */
-.cats_information {
+.cats_information_wrap {
     background-color: var(--grade_1);
     width: 100%;
-    height: 50%;
+    height: 15%;
+}
+/* .cats_information {
+    background-color: var(--grade_1);
+    width: 100%;
+    height: ;
+} */
+.cats_information_title{
+   background-color: white;
+   width: 100%;
+   height: calc(10%); 
+   border-top: 1px solid;
 }
 
 
+
+/* review */
 
 .review_wrap {
     width: 100%;
-    height: 10%;
+    height: calc(15% - 5px);
     background-color: var(--test_1);
     color: brown;
 }
@@ -717,7 +699,7 @@ section {
 
 footer {
     width: 100%;
-    height: 10%;
+    height: 8%;
     background-color: var(--basic_text);
 }
 
@@ -747,16 +729,20 @@ footer {
     body {
 
         background-color: darksalmon;
+       
     }
 
     .wrap {
         max-width: calc(100% - 30px);
+        height: 3200px;
+       
     }
 
 
     section {
         width: (100% - 30px);
-        height: 60%;
+       height: 100%;
+        /* 이새키가 문제였어 */
     }
 
     .content_wrap {
@@ -789,7 +775,22 @@ footer {
         border-radius: 10px;
         color: var(--basic_text);
     }
-
+    /* ad */
+    /* 왜 되지? */
+    .content_ad_wrap {
+        height: fit-content;
+        /* 725원래 높이에서 그림을 줄여버려서 그만큼 공백이생긴다
+        그래서 fit 해줘야됨 */
+        /* js가 되는거는 알아봐야됨 */
+    }
+    .ad {
+        width: 450px;
+        height:450px;
+    }
+    .ad div img{
+        width: 450px;
+        height:450px;
+    }
     /* best_item */
     .best_item_content_wrap div:nth-of-type(5) {
         display: none;
@@ -852,7 +853,7 @@ footer {
     }
 
     .editor_recommand_video video {
-        height: 60%;
+        height: 50%;
     }
 }
 
