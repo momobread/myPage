@@ -2,13 +2,16 @@
 
 /* header =2% */
 /* footer = 8% */
+
 /* section = 90% */
     /* best 15% */
     /*  new 15% */
     /* recommand 15%  */
-    /* information 15% */
-    /* review 20% */
-    /* 나머지 10% 혹시모르게 쓸 부분 */
+    /* information 20% */
+    /* review 10% */
+    /* 나머지 5% 혹시모르게 쓸 부분 */
+
+    /* 왜 안맞지? */
 
 :root {
     --basic_text: rgb(252, 171, 166);
@@ -41,7 +44,7 @@ section들이 움직인다 */
 .wrap {
     width: 1900px;
     height: 4000px;
-    background-color: black;
+    background-color: white;
     /* border: 2px solid; */
     display: flex;
     align-items: center;
@@ -521,7 +524,7 @@ section {
 }
 .editor_recommand_title {
     width: 100%;
-    height: calc(7%);
+    height: calc(7% + 3px);
     background-color: white;
     color: var(--basic_color_1);
     display: flex;
@@ -668,29 +671,70 @@ section {
 
 
 .cats_information_wrap {
-    background-color: var(--grade_1);
+    /* background-color: var(--grade_1); */
     width: 100%;
-    height: 15%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
 }
-/* .cats_information {
-    background-color: var(--grade_1);
-    width: 100%;
-    height: ;
-} */
+
 .cats_information_title{
    background-color: white;
    width: 100%;
-   height: calc(10%); 
-   border-top: 1px solid;
+   height: calc(7% + 3px); 
+   border-top: 1px solid var(--basic_color_1);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2.5em;
+   border-bottom: 2px solid var(--basic_color_1);
+    color: var(--basic_color_1);
+    font-weight: 500;
+
 }
 
+.cats_information{
+    width: 100%;
+    height: calc(100%);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+   
+}
+.information_feed_wrap{
+    width: 75%;
+    height: 80%;
+    /* background-color: var(--basic_color_1); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap :10px;
+}
+
+.information_feed_wrap_1, .information_feed_wrap_2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap : 10px;
+}
+.information_feed_1,.information_feed_2,
+.information_feed_3,.information_feed_4{
+    width: 100%;
+    /* height: ; */
+    /* background-color: var(--grade_1); */
+    border-radius: 15px;
+    border : 2px solid var(--border_basic_2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 
 
 /* review */
 
 .review_wrap {
     width: 100%;
-    height: calc(15% - 5px);
+    height: calc(10%);
     background-color: var(--test_1);
     color: brown;
 }
