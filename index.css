@@ -1130,6 +1130,10 @@ footer {
 .best_QA_review_content_id,.current_review_content_id,.best_review_content_id{
     display: none;
 }
+.best_review_content,.current_review_content,.best_QA_content{
+
+    height: 60%;
+}
 
 .best_review_title,.currnet_review_title,
 .best_QA_title{
