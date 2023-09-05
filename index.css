@@ -65,6 +65,7 @@ header {
     justify-content: space-between;
     /* align-items: center; */
     font-family: 'IBM Plex Sans KR', sans-serif;
+    margin-top: 13px;
 }
 
 .header_wrap {
@@ -779,8 +780,121 @@ section {
 .review_wrap {
     width: 100%;
     height: calc(10%);
-    background-color: var(--test_1);
-    color: brown;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--basic_text);
+  align-items: center;
+}
+
+.review{
+    width: 95%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(223, 241, 235);/ */
+    gap:20px;
+    box-sizing: border-box;
+}
+
+.best_review,.current_review,.best_QA{
+    width: 35%;
+    /* border: 1px solid var(--grade_1); */
+    height: calc(90% + 10px);
+    flex-direction: column;
+}
+
+
+.best_review_title_wrap,.currnet_review_title_wrap,.best_QA_title_wrap{
+    width: 100%;
+    height: 13%;
+    /* border: 1px solid; */
+    display: flex;
+
+}
+.review_blank{
+    width: 33%;
+}
+
+/* 리뷰 표지 */
+.best_review_title,.currnet_review_title,
+.best_QA_title{
+    width: 160px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: black;
+    font-weight: 500;
+}
+.best_review_title{
+    border: 2px solid var(--grade_1);
+    border-bottom: none;
+    background: linear-gradient(to right,var(--grade_1),rgba(111, 87, 245,0.4));
+}
+.currnet_review_title{
+    border: 2px solid var(--basic_color_1);
+    border-bottom: none;
+    background: linear-gradient(to right,var(--basic_color_1),rgba(240, 226, 28,0.4));
+}
+.best_QA_title{
+    border: 2px solid var(--basic_text);
+    background: linear-gradient(to right,var(--basic_text),rgba(252, 101, 164,0.4));
+    border-bottom: none;
+
+}
+
+/* 리뷰내용 */
+.best_review_content,.current_review_content,.best_QA_content{
+    width : 90%;
+    height: 90%;
+    border: 2px solid var(--border_basic_1);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.best_review_content{
+    border-top-right-radius: 7px;
+
+}
+.current_review_content{
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+.best_QA_content{
+    border-top-left-radius: 7px;
+}
+
+.best_review_content_wrap,.current_review_content_wrap,.best_QA_review_content_wrap{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap : 15px;
+}
+
+.best_review_content_wrap div:last-child ,.current_review_content_wrap div:last-child,
+.best_QA_review_content_wrap div:last-child{
+    font-size: 1.2em;
+}
+
+.current_review_content_id,.best_review_content_id,.best_QA_review_content_id{
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.best_review_content_id{
+    color: var(--grade_1);
+}
+.current_review_content_id{
+    color:  var(--basic_color_1);
+}
+.best_QA_review_content_id{
+    color: var(--basic_text);
 }
 
 /* footer */
@@ -789,6 +903,8 @@ footer {
     width: 100%;
     height: 8%;
     background-color: var(--basic_text);
+    display: flex;
+    
 }
 
 
@@ -852,13 +968,15 @@ footer {
 
 
     section {
-        width: (100% - 30px);
-       height: 100%;
+        width:(100% - 30px);
+       height: 90%;
         /* 이새키가 문제였어 */
     }
 
     .content_wrap {
         width: 100%;
+        height: 100%;
+
     }
 
     /* search */
@@ -974,6 +1092,26 @@ footer {
         font-size: 0.7em;
     }
     
+    .information_feed_1,.information_feed_2,
+    .information_feed_3,.information_feed_4{
+        width: 40%;
+        max-height: 210px;
+    }
+.information_feed_wrap{
+    gap:10px ;
+}
+
+.information_feed_wrap_1, .information_feed_wrap_2{
+    gap:10px;
+}
+/* review */
+.review_wrap{
+    height: calc(14% + 8px);
+}
+.best_QA_review_content_id,.current_review_content_id,.best_review_content_id{
+    display: none;
+}
+
 
 
 }
