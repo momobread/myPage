@@ -24,9 +24,8 @@ body{
 /* 이안에서 login이 놀수 잇도록 login */
 /* wrap안에는 다 반응형으로 비율 줄어들도록 px값을 wrap에다가 고정시켜줌 */
 .login_wrap{
-    /*내가 만큼 ㅋ */
     /* 오른쪽에서 왼쪽으로 */
-    background: linear-gradient(to left, var(--basic_text),var(--gradation_1),var(--basic_text_2));
+    background: linear-gradient(to left, var(--basic_text),var(--basic_text_2));
     border: 1px solid black;
     width: 1900px;
     /* margin 10씩 */
