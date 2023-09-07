@@ -19,6 +19,7 @@
     align-items: center;
     background: linear-gradient(to left,var(--grade_1),var(--grade_gradation));
     opacity: 0.6;
+    font-family: 'IBM Plex Sans KR', sans-serif;
 }
 /*serachId_wrap을 viewport로 해놨기때문에 %사용안하고 px로 */
 .serachId{
@@ -32,7 +33,7 @@
     border-right: 1px solid rgb(115, 115, 116);
     border-bottom: 1px solid rgb(115, 115, 116);
     flex-direction: column;
-    gap : 30px;
+    gap : 20px;
 }
 
 .searchId_email_wrap,.searchId_phonenumber_wrap{
@@ -43,6 +44,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap : 15px;
   /* background-color: black;/ */
   
 }
@@ -50,12 +52,17 @@
 .searchId_phonenumber_title,.searchId_email_title{
     width: 90%;
     height: 15%;
-    background-color: azure;
-    font-size: 1.2em;
+    /* background-color: azure; */
+    font-size: 1.3em;
     display: flex;
-
+    font-weight: 600;
     align-items: center;
+    justify-content: center;
     color :black;
+}
+.searchId_email_title span,.searchId_phonenumber_title span{
+    height: 60%;
+    
 }
 .input_name,.input_email,.input_phonenumber{
     display: flex;
@@ -63,9 +70,36 @@
     width: 90%;
     height: 10%;
     gap : 20px;
+    font-weight: 500;
+}
+
+#input_name_by_email,#input_name_by_phonenumber,
+#input_email_by_email,#input_email_by_phonenumber{
+    background: none;
+    border: none;
+    border-bottom: 1px solid ;
+    width: 60%;
+    font-size: 1.2em;
 }
 .border_bar{
-    width: 40%;
-    height: 1%;
-    background-color: white;
+    width: 20%;
+    height: calc(1% - 5px);
+    background-color: rgb(255, 255, 255);
+}
+.input_name_title,.input_email_title,.input_phonehnumber_title{
+    width: 100px;
+   
+}
+
+#serchId_by_email_submmit, #serchId_by_email_submmit{
+    width: 150px;
+    height: 40px;
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.76);
+    border: none;
+    border-right: 2px solid rgb(115, 115, 116);
+    border-bottom: 2px solid rgb(115, 115, 116);
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 1.1em;
 }
