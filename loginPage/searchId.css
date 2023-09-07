@@ -1,0 +1,71 @@
+:root {
+    --basic_text: rgb(252, 171, 166);
+    --border_basic_1: rgb(214, 214, 214);
+    --border_basic_2: rgb(153, 147, 147);
+    --basic_color_1: rgb(255, 215, 130);
+    --basic_text_2: rgb(174, 154, 247);
+    --gradation_1 : rgb(205, 154, 247);
+    --test_1: rgb(146, 248, 214);
+    --grade_1: rgb(72, 111, 238);
+    --grade_gradation : rgb(130, 212, 250);
+
+}
+
+.serachId_wrap{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left,var(--grade_1),var(--grade_gradation));
+    opacity: 0.6;
+}
+/*serachId_wrap을 viewport로 해놨기때문에 %사용안하고 px로 */
+.serachId{
+    width: 500px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 15px;
+    border-right: 1px solid rgb(115, 115, 116);
+    border-bottom: 1px solid rgb(115, 115, 116);
+    flex-direction: column;
+    gap : 30px;
+}
+
+.searchId_email_wrap,.searchId_phonenumber_wrap{
+    /* background-color: white; */
+  width: 90%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: black;/ */
+  
+}
+
+.searchId_phonenumber_title,.searchId_email_title{
+    width: 90%;
+    height: 15%;
+    background-color: azure;
+    font-size: 1.2em;
+    display: flex;
+
+    align-items: center;
+    color :black;
+}
+.input_name,.input_email,.input_phonenumber{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+    gap : 20px;
+}
+.border_bar{
+    width: 40%;
+    height: 1%;
+    background-color: white;
+}
