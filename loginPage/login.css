@@ -70,8 +70,11 @@ body{
     font-size: 1.3em;
     font-weight: 400;
     background: none;
-    
 }
+#login_id:focus, #login_password:focus{
+    outline: none;
+}
+
 #login_id::placeholder{
     color : black;
     opacity: 0.7;

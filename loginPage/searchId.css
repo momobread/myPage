@@ -81,11 +81,12 @@
     width: 60%;
     font-size: 1.2em;
 }
-.border_bar{
-    width: 20%;
-    height: calc(1% - 5px);
-    background-color: rgb(255, 255, 255);
+
+#input_name_by_email:focus,#input_name_by_phonenumber:focus,
+#input_email_by_email:focus,#input_email_by_phonenumber:focus{
+    outline: none;
 }
+
 .input_name_title,.input_email_title,.input_phonehnumber_title{
     width: 100px;
    
@@ -102,4 +103,7 @@
     border-radius: 7px;
     font-weight: 600;
     font-size: 1.1em;
+}
+#serchId_by_email_submmit:hover,#serchId_by_email_submmit:hover{
+    cursor: pointer;
 }
