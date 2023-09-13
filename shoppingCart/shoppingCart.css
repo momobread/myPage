@@ -277,7 +277,54 @@ section{
 .content_coupon_item1_title,.content_coupon_item2_title,.content_coupon_item3_title{
     position: absolute;
     bottom: 45%;
-    left: 20%;
+}
+.content_coupon_item1_title{
+    left:20%;
+    color: white;
+}
+.content_coupon_item2_title{
+    left:15%;
+}
+.content_coupon_item3_title{
+    left: 12%;
+    color: white;
+}
+
+.content_coupon_title{
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.coupon_button{
+    position: absolute;
+    
+}
+.content_coupon_item1_title,.content_coupon_item2_title,
+.content_coupon_item3_title
+{
+    font-size: 1.5em;
+}
+.coupon_button{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#coupon1{
+    width: calc(85% + 6px);
+    height: 90%;
+    background: none;
+    border :none;
+    font-size: 1.3em;
+    vertical-align: text-top;
+}
+
+#coupon1:hover{
+    cursor: pointer;
+    color: white;
+    border: 3px solid var(--border_basic_1);
 }
 
 
