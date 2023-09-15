@@ -149,11 +149,25 @@ section{
     /* 왜 이게 안먹지1 */
 }
 
+/* content title */
+.content_title{
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.content_title span{
+    font-size: 2.5em;
+    font-weight: 400;
+}
+
+
 /* 여기여기 */
 .content{
     
     width: 90%;
-    height: 75%;
+    height: 70%;
     display: flex;
     justify-content: center ;
     align-items: center;
@@ -251,8 +265,8 @@ section{
     gap : 30px;
 }
 .content_coupon_item1,.content_coupon_item2,.content_coupon_item3{
-    width:30%;
-    height: 75%;
+    width:450px;
+    height: 190px;
     /* border: 2px solid ; */
     border-radius: 10px;
     position: relative;
@@ -279,14 +293,14 @@ section{
     bottom: 45%;
 }
 .content_coupon_item1_title{
-    left:20%;
+    left:18%;
     color: white;
 }
 .content_coupon_item2_title{
-    left:15%;
+    left:14%;
 }
 .content_coupon_item3_title{
-    left: 12%;
+    left: 8%;
     color: white;
 }
 
@@ -296,39 +310,89 @@ section{
     font-size: 2em;
 }
 
-.coupon_button{
+.coupon_button,.coupon_button_2,.coupon_button_3{
     position: absolute;
     
-}
-.content_coupon_item1_title,.content_coupon_item2_title,
-.content_coupon_item3_title
-{
-    font-size: 1.5em;
-}
-.coupon_button{
-    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#coupon1{
-    width: calc(85% + 6px);
-    height: 90%;
+.coupon_button{
+    width: calc(70% + 7px);
+}
+
+.coupon_button_2{
+    width: calc(70%);
+}
+.coupon_button_3{
+    width: calc(70% + 12px);
+}
+
+
+
+
+.content_coupon_item1_title,.content_coupon_item2_title,
+.content_coupon_item3_title
+{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+#coupon1,#coupon2,#coupon3{
+    position: relative;
+    width: 100%;
+    height: 100%;
     background: none;
     border :none;
     font-size: 1.3em;
     vertical-align: text-top;
+    
 }
-
+#coupon1{
+    left:2%;
+}
+#coupon2{
+    left:calc(3% + 2px);
+}
+#coupon3{
+    
+}
 #coupon1:hover{
+
     cursor: pointer;
     color: white;
-    border: 3px solid var(--border_basic_1);
+    border: 3px solid var(--basic_text_2);
+    border-radius: 10px;
+}
+#coupon2:hover{
+    cursor: pointer;
+    color: black;
+    border: 3px solid var(--grade_1);
+    border-radius: 10px;
+}
+#coupon3:hover{
+    cursor: pointer;
+    color: black;
+    border: 3px solid black;
+    border-radius: 10px;
 }
 
 
-
+.click_text_1,.click_text_3{
+    font-size: 1.5em;
+    position: absolute;
+    color: white;
+    top : 20%;
+    display: none;
+}
+.click_text_2{
+    font-size: 1.5em;
+    position: absolute;
+    color: rgb(8, 8, 8);
+    top : 20%;
+    display: none;
+}
 /* footer */
 footer{
     width: 100%;
