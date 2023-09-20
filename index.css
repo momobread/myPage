@@ -393,6 +393,7 @@ section {
     justify-content: center;
     gap:10px;
     
+    
     /* 90%가 되겠다 */
    
 }
@@ -424,9 +425,9 @@ section {
 
 .icon_list img{
     /* 오호라 */
-   object-fit: contain;
-    width: 20px;
-    height: 20px;
+   /* object-fit: contain; */
+    width: 30px;
+    height: 30px;
 }
 
 .best_item_left_button,
@@ -477,7 +478,9 @@ section {
 
 .best_item_content a img {
     border-radius: 10px;
-    width: 100%;
+    /* width: 100%; 와씨 미쳤다 이렇게 하니까 a안의 모든 이미지가
+    100 먹구나 (하리!)
+    근데 이걸 역으로 생각해보면 fit content 쓰면 원본값을 무시하고 적용된다고 볼수도 있겠다*/
     height: 70%;
     /* width: 220px;
     height: 260px; */
