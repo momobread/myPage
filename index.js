@@ -84,4 +84,4 @@ function adAutoScroll (time) {
 
 
 
-setInterval(()=>adAutoScroll(1),2000);
+// setInterval(()=>adAutoScroll(1),2000);

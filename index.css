@@ -403,14 +403,14 @@ section {
 }
 
 
-/* icon */
+/* iconLsit */
 .icon_list_wrap{
     width: 100%;
     height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    /* position: absolute; */
     bottom: calc(21% + 4px);
     background-color: brown;
     border-radius: 7px;
@@ -430,6 +430,20 @@ section {
     height: 30px;
 }
 
+.icon_list_wrap {
+
+    /* 9월 20일 만드는 중 */
+    /* display: none; */
+}
+
+
+
+
+
+
+
+
+/* best_item 버튼  */
 .best_item_left_button,
 .best_item_right_button {
     height: 70%;

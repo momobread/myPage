@@ -99,28 +99,29 @@
                         <div class="best_item_left_button">
                             <img src="./image/arrow_icon_left.png" />
                         </div>
-                        <div class="best_item_content">
+                        <div class="best_item_content" id="a" data-code="BI-I-001" data-value="BI-P-001" data-title="BI-T-001">
                             <a href="./shoppingItem/item.html">
-                                
+                                <!-- id 형식은 content이름, 항목 ,넘버 -->
                                 <div class="best_item_content_main">
-                                    <img src="./image/bestItem/best_item1.png">
-                                    <div class="best_item_content_title" id="BI-1"><span>개맛있는 시그니쳐 사료</span></div>
-                                    <div class="best_item_content_price" id="BI-1-P"><span>35,000</span></div>
-                                </div>
-
-                                <div class="icon_list_wrap">
-                                    <div class="icon_list">
-                                        <img src="./image/shopping_icon.png"
-                                        onclick="" />
-                                        <!-- <img src="./image/shopping_icon.png"
-                                        onclick="" />
-                                        <img src="./image/shopping_icon.png"
-                                        onclick="" />
-                                        <img src="./image/shopping_icon.png"
-                                        onclick="" /> -->
-                                    </div>
+                                    <img src="./image/bestItem/best_item1.png" class="best_item_content_title_img" id="BI-I-001">
+                                    
+                                    <div class="best_item_content_title" id="BI-T-001"><span>개맛있는 시그니쳐 사료</span></div> 
+                    
+                                   <div class="best_item_content_price" id="BI-P-001"><span>35,000</span></div>
                                 </div>
                             </a>
+                            <div class="icon_list_wrap">
+                                <div class="icon_list">
+                                    <img src="./image/shopping_icon.png" id ="A" onclick="extractItem(this.id)" /> 
+                                    <!-- <img src="./image/shopping_icon.png" id ="A" onclick="extractItem(parent.id)" /> -->
+                                    <!-- <img src="./image/shopping_icon.png"
+                                    onclick="" />
+                                    <img src="./image/shopping_icon.png"
+                                    onclick="" />-->
+                                    <img src="./image/shopping_icon.png"
+                                    onclick="TEST()" /> 
+                                </div>
+                            </div>
                         </div>
                         <div class="best_item_content">
                             <a href="">
@@ -381,6 +382,7 @@
         </footer>
     </div>
     <script src="index.js"></script>
+    <script src="./shoppingItem/item.js"></script>
 </body>
 
 </html>
