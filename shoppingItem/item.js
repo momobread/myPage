@@ -15,6 +15,7 @@ let dataset_title = ""
 // console.log(best_item_content_title);
 // console.log(best_item_content_price);
 
+export{dataset_code,dataset_value,dataset_title}
 
 
 console.log("itemjs페이지 입니다");
@@ -38,7 +39,7 @@ function extractItem(id){
 
 
 // TESTA
-// best_item 추출 --> a태그
+// best_item 추출 --> div태그
 function extractItem(item){
      best_item_icon = document.getElementById(`${item}`)
      best_item_content= best_item_icon.parentNode.parentNode.parentNode
@@ -47,12 +48,10 @@ function extractItem(item){
     console.log(`잘나오는 중`);
     console.log(best_item_content);     // best_item_content가 나옴 
 
-    A=best_item_content.dataset.code
-    // dataset으로 code 뽑아내기
-    console.log(A); 
     ItemComponent(best_item_content)
 }
 
+// dataset과 id 매치시켜 컴포넌트 추출 
 function ItemComponent(item){
     best_item_componenet = item;
     console.log("ITEMCOMPONENT부분 입니다")
@@ -71,18 +70,16 @@ function ItemComponent(item){
     best_item_content_title = document.getElementById(`${dataset_title}`)
     console.log(best_item_content_title)
 
-
-
-    // best_item_content_image =
-
-    // best_item_content_price =
-    // best_item_content_image =
 }
 // itemcomponent가 전역에 잘 저장되는지 test
 // function TEST(){
 //     // 전역변수로 만들어서 잘 저장되어 있습니다
 //     console.log(best_item_content_image)   
 // }
+
+function makeCartItem(){
+    
+}
 
 
 // function extractItem(item){
