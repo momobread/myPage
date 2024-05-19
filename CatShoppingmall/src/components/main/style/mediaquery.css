@@ -1,0 +1,16 @@
+@media screen and (max-width: 1596px) {
+}
+/* 중간 걸리는 포인트 */
+@media screen and (max-width: 1239px) {
+}
+@media screen and (max-width: 819px) {
+}
+@media screen and (max-width: 389px) {
+  body {
+    background-color: darkseagreen;
+  }
+
+  .wrap {
+    max-width: calc(100% - 30px);
+  }
+}
