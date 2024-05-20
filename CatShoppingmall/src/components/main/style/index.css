@@ -1,36 +1,97 @@
-/* body {
-  display: flex;
-  justify-content: center;
-} */
-
+:root {
+  --accent_pink: rgb(252, 171, 166);
+  --border_basic_1: rgb(214, 214, 214);
+  --border_basic_2: rgb(153, 147, 147);
+  --basic_color_1: rgb(255, 215, 130);
+  --basic_text_2: rgb(174, 154, 247);
+  --accent_green: rgb(146, 248, 214);
+  --accent_blue: rgb(72, 111, 238);
+}
+body {
+  /* 여기서부터 다시 */
+  overflow-x: hidden;
+}
+/* 전체 */
 .container {
-  width: 100vw;
-  height: 3300px;
+  width: calc(100vw - 16px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "IBM Plex Sans KR", sans-serif;
+  box-sizing: border-box;
 }
 /* header */
-header {
-  background: pink;
+.header_wrap {
   width: 100vw;
   height: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.header_bar {
+  flex-grow: 0.2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.header {
+  flex-grow: 1;
+  width: fit-content;
+  height: 30%;
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+}
+.logo {
+  margin: auto 0;
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.company_name {
+  align-content: center;
+  font-size: 2.5em;
+  font-weight: 500;
+}
+.shopping_cart_button a img {
+  width: 30px;
+  height: 30px;
 }
 
 /* nav */
 .nav {
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans KR", sans-serif;
   width: 100vw;
   height: 55px;
-  background-color: aqua;
   display: flex;
   justify-content: center;
 }
+.nav input {
+  border-radius: 7px;
+  width: 600px;
+  height: 100%;
+  border: 2px solid var(--accent_pink);
+}
+
 .nav_right_wrap {
   display: flex;
 }
 
-/* add */
+.search_button {
+  border-radius: 7px;
+  color: white;
+  background-color: var(--accent_pink);
+}
 
+/*  */
+/* add */
+/*  */
 .add_wrap {
   width: 100vw;
   height: 450px;
@@ -39,9 +100,9 @@ header {
   justify-content: center;
 }
 
-section {
+/*  */
+.content {
   width: 100vw;
-  height: 3000px;
 }
 
 /* itemlist */
@@ -70,8 +131,8 @@ section {
   justify-content: center;
 }
 
-footer {
+.footer {
   width: 100vw;
-  height: 380px;
+  height: 300px;
   background-color: deepskyblue;
 }

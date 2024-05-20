@@ -15,19 +15,7 @@ function Nav() {
           autocomplete="off"
         />
       </div>
-      <div className="nav_right_wrap">
-        <div className="login_button">
-          <a href="/loginPage/login.html">Login</a>
-        </div>
-        <div className="shopping_cart_button">
-          <a href="./shoppingCart/shoppingCart.html">
-            <img src="/src/assets/header_nav_bar_icon.png" />
-          </a>
-        </div>
-        <div className="nav_menu">
-          <img src="/src/assets/shopping_icon.png" />
-        </div>
-      </div>
+      <button className="search_button">search</button>
     </div>
   );
 }

@@ -18,15 +18,15 @@ function App() {
       </header>
       <Nav />
       <ADD />
-      <section>
+      <div className="content">
         <ItemList />
         <ItemList />
         <Recommand />
         <Information />
-      </section>
-      <footer>
+      </div>
+      <div className="footer">
         <Footer />
-      </footer>
+      </div>
     </div>
   );
 }
