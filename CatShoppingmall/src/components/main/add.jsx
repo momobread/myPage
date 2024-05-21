@@ -1,29 +1,51 @@
+const additem = [
+  {
+    title: "고양이 캣 휠",
+    price: 10000,
+    id: "001",
+    img: "/src/assets/add/catwheel.jpg",
+    text: "달리고 싶은 고양이 모두 모이라옹~",
+  },
+  {
+    title: "고양이 스크래치",
+    price: 12000,
+    id: "002",
+    img: "/src/assets/add/cat_scratch.jpg",
+    text: "긁어긁어긁어라옹",
+  },
+  {
+    title: "고양이 캣 휠",
+    price: 10000,
+    id: "003",
+    img: "/src/assets/add/catwheel.jpg",
+    text: "달리고 싶은 고양이 모두 모이라옹~",
+  },
+  {
+    title: "고양이 스크래치",
+    price: 12000,
+    id: "004",
+    img: "/src/assets/add/cat_scratch.jpg",
+    text: "긁어긁어긁어라옹",
+  },
+];
+
 function ADD() {
   return (
     <div className="add_wrap">
       <div className="content_ad_wrap">
-        <div className="ad" id="ad">
-          {/* <div class="current_silde" id="nav_image">
-            <img src="./image/header_image/cat_tower.png" />
-          </div>
-          <div class="next_slide1" id="next_nav_image1">
-            <img src="./image/header_image/catwheel.jpg" />
-          </div>
-          <div class="next_slide2" id="next_nav_image2">
-            <img src="./image/header_image/haeder_nav_scratch.jpg" />
-          </div>
-          <div class="next_slide3" id="next_nav_image3">
-            <img src="./image/header_image/cat_해먹.jpg" />
-          </div>
-        </div>
-        <div class="content_ad_next_button">
-          <div id="ad_next_button_1"></div>
-          <div id="ad_next_button_2"></div>
-          <div id="ad_next_button_3"></div>
-          <div id="ad_next_button_4"></div> */}
-        </div>
+        <ul className="addItemList">
+          <AddItem image={additem[0].img} />
+        </ul>
       </div>
     </div>
+  );
+}
+
+function AddItem({ image }) {
+  return (
+    <li className="addList">
+      <img src={image} />
+    </li>
   );
 }
 

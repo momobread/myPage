@@ -14,6 +14,12 @@
   .search input {
     width: 100%;
   }
+  .itemListContent li:nth-of-type(4) {
+    display: none;
+  }
+  .items {
+    width: 30%;
+  }
 }
 @media screen and (max-width: 389px) {
   body {
