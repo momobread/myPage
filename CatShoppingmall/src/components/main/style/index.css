@@ -222,6 +222,32 @@ body {
   display: none;
 }
 
+.recommandTextWrap {
+  width: 40%;
+  height: 100%;
+}
+.recommandText {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.recommand_1,
+.recommand_2,
+.recommand_3 {
+  background-color: white;
+}
+
+.recommand_1 {
+  width: 30%;
+}
+.recommand_2 {
+  width: 40%;
+}
+.recommand_3 {
+  width: 70%;
+}
 /* infortmaion */
 .informationWrap {
   width: 100vw;

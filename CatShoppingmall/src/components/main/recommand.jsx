@@ -6,7 +6,19 @@ function Recommand({ children }) {
       <ContentTitle>{children}</ContentTitle>
       <div className="recommandContent">
         <RecommanVideo />
-        <RecommandContent />
+        <div className="recommandTextWrap">
+          <ul className="recommandText">
+            <RecommandText>
+              {["hello", "content", "⭐️⭐️⭐️", "_1"]}
+            </RecommandText>
+            <RecommandText>
+              {["hello", "content", "⭐️⭐️⭐️", "_2"]}
+            </RecommandText>
+            <RecommandText>
+              {["hello", "content", "⭐️⭐️⭐️", "_3"]}
+            </RecommandText>
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -34,8 +46,25 @@ function RecommanVideo() {
   );
 }
 
-function RecommandContent() {
-  return <div>hello</div>;
+function RecommandText({ children }) {
+  return (
+    <li className={`recommand${children[3]}`}>
+      <RecommandTitle title={children[0]} />
+      <RecommandSubstance text={children[1]} />
+      <RecommandRate rate={children[2]} />
+    </li>
+  );
+}
+
+function RecommandTitle({ title }) {
+  return <div>{title}</div>;
+}
+
+function RecommandSubstance({ text }) {
+  return <div>{text}</div>;
+}
+function RecommandRate({ rate }) {
+  return <span>{rate}</span>;
 }
 
 export default Recommand;
