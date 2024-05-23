@@ -1,30 +1,44 @@
 // import items from "../../../public/item";
 
-function ItemList({ children, items, handleNext, handlePrevious }) {
+import ContentTitle from "./contentTitle";
+
+function ItemList({
+  children,
+  items,
+  handleNext,
+  handlePrevious,
+  pageNum,
+  detailContent,
+}) {
   return (
     <div className="ItemListWrap">
       <div className="pc_title">
-        <ItemsTitle items={items}>{children}</ItemsTitle>
+        {/* <ItemsTitle items={items}>{children}</ItemsTitle> */}
+        <ContentTitle>{children}</ContentTitle>
       </div>
       <div className="itemListContentWrap">
         <button onClick={() => handlePrevious()}>-</button>
-        <ItemsContent items={items} />
+        <ItemsContent
+          items={items}
+          pageNum={pageNum}
+          detailContent={detailContent}
+        />
         <button onClick={() => handleNext()}>+</button>
       </div>
     </div>
   );
 }
 
-function ItemsTitle({ children }) {
-  return (
-    <>
-      <div className="ItemListTitle">
-        <span>{children}</span>
-      </div>
-    </>
-  );
-}
-function ItemsContent({ items }) {
+// function ItemsTitle({ children }) {
+//   return (
+//     <>
+//       <div className="ItemListTitle">
+//         <span>{children}</span>
+//       </div>
+//     </>
+//   );
+// }
+function ItemsContent({ items, pageNum, detailContent }) {
   return (
     <>
       <ul className="itemListContent">
@@ -33,7 +47,14 @@ function ItemsContent({ items }) {
 
         {items &&
           items.map((item) => (
-            <li key={item.id} className="items">
+            <li
+              key={item.id}
+              className="items"
+              onClick={() => {
+                pageNum(2);
+                detailContent(item);
+              }}
+            >
               <img src={item.img} />
               <span>{item.title}</span>
               <span>{item.price}</span>
