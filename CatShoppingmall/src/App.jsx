@@ -42,6 +42,7 @@ function App() {
       </header>
       <Nav />
       <ADD />
+      <div className="mobile">ALL Items</div>
       <div className="content">
         <ItemList
           items={bestitems[bestNum]}
@@ -50,6 +51,7 @@ function App() {
         >
           bestItem
         </ItemList>
+
         <ItemList
           items={newitems[newNum]}
           handleNext={handleNextNewItem}
@@ -57,6 +59,7 @@ function App() {
         >
           NewItem
         </ItemList>
+
         <Recommand />
         <Information />
       </div>
