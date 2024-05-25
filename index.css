@@ -621,20 +621,19 @@ section {
 
 .editor_recommand_video {
   /* video가 flex가 안먹어서 일부러 브레이크 포인트까지만 빈여백으로 밀리도록 해놨다 */
-  width: 60%;
+  width: 44%;
   height: 100%;
   display: flex;
   align-items: center;
-  position: relative;
+  /* position: relative; */
   justify-content: center;
+  gap: 20px;
 }
 
 .editor_recommand_video video {
-  width: fit-content;
-  height: 80%;
+  width: 30%;
+  height: 70%;
   display: flex;
-
-  background-color: var(--basic_text_2);
 }
 
 .editor_recommand_content {
@@ -1010,9 +1009,6 @@ footer {
 }
 
 @media screen and (max-width: 1596px) {
-  .editor_recommand_video video:nth-of-type(3) {
-    display: none;
-  }
 }
 /* 중간 걸리는 포인트 */
 @media screen and (max-width: 1239px) {
@@ -1185,10 +1181,11 @@ footer {
     font-size: 0.5em;
   }
 
-  .editor_recommand_video {
-    /* justify-content: flex-start;
-        pa */
-  }
+ 
+    .editor_recommand_video video:nth-of-type(3) {
+      display: none;
+    }
+  
 
   .editor_recommand_video video {
     height: 50%;
