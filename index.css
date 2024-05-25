@@ -38,7 +38,7 @@ body {
   /* height: 100vh; */
   justify-content: center;
   display: flex;
-  background-color: rgb(142, 150, 134);
+  /* background-color: rgb(142, 150, 134); */
 }
 
 .wrap {
@@ -616,7 +616,8 @@ section {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 5%;
 }
 
 .editor_recommand_video {
@@ -1181,14 +1182,13 @@ footer {
     font-size: 0.5em;
   }
 
- 
-    .editor_recommand_video video:nth-of-type(3) {
-      display: none;
-    }
-  
+  .editor_recommand_video video:nth-of-type(3) {
+    display: none;
+  }
 
   .editor_recommand_video video {
     height: 50%;
+    width: 40%;
   }
   /* inforamation */
   .information_feed_1_title,
