@@ -14,7 +14,9 @@ function ItemList({
     <div className="ItemListWrap">
       <div className="pc_title">
         {/* <ItemsTitle items={items}>{children}</ItemsTitle> */}
-        <ContentTitle>{children}</ContentTitle>
+        <div className="ItemListTitle">
+          <ContentTitle>{children}</ContentTitle>
+        </div>
       </div>
       <div className="itemListContentWrap">
         <button onClick={() => handlePrevious()}>-</button>

@@ -1,9 +1,7 @@
 function ContentTitle({ children }) {
   return (
     <>
-      <div className="ItemListTitle">
-        <span>{children}</span>
-      </div>
+      <span>{children}</span>
     </>
   );
 }
