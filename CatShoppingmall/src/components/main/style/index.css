@@ -2,7 +2,7 @@
   --accent_pink: rgb(252, 171, 166);
   --border_basic_1: rgb(214, 214, 214);
   --border_basic_2: rgb(153, 147, 147);
-  --basic_color_1: rgb(255, 215, 130);
+  --accent_yellow: rgb(255, 215, 130);
   --accent_purple: rgb(174, 154, 247);
   --accent_green: rgb(146, 248, 214);
   --accent_blue: rgb(72, 111, 238);
@@ -101,7 +101,6 @@ body {
   display: flex;
   justify-content: center;
   border-top: 1px solid var(--border_basic_2);
-  border-bottom: 1px solid var(--border_basic_2);
 }
 
 .addItemList {
@@ -122,14 +121,15 @@ body {
 .ItemListWrap {
   width: 100vw;
   height: 500px;
-  border-bottom: 1px solid black;
+
   /* background-color: darkgrey; */
   box-sizing: border-box;
 }
 
 /* bestitem */
 .ItemListTitle,
-.ItemListTitle_2 {
+.ItemListTitle_2,
+.ItemListTitle_3 {
   /* 갑 */
   width: 100%;
   height: 48px;
@@ -147,11 +147,15 @@ body {
 }
 
 .ItemListTitle_2 {
+  border-top: 2px solid var(--accent_yellow);
+  border-bottom: 1px solid var(--accent_yellow);
+  color: var(--accent_yellow);
+}
+.ItemListTitle_3 {
   border-top: 2px solid var(--accent_purple);
   border-bottom: 1px solid var(--accent_purple);
   color: var(--accent_purple);
 }
-
 .itemListContent {
   display: flex;
   width: 80%;
@@ -283,7 +287,7 @@ body {
 .informationWrap {
   width: 100vw;
   height: 800px;
-  background-color: beige;
+  gap: 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -331,36 +335,69 @@ body {
 }
 .InformRateWrap {
   box-sizing: border-box;
-  height: 40%;
+  height: 35%;
   width: 100%;
   display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 .InformRate {
-  background-color: rgb(146, 229, 229);
-  height: 80%;
+  height: 85%;
   width: 30%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
+.InformRateContent {
+  box-shadow: rgba(0, 0, 0, 0.15) 3.95px 3.95px 4.6px;
+  height: 85%;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid var(--border_basic_1);
+  line-height: 30px;
+}
+.InformRateContent ul li {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
 .informIndexWrap {
   height: 15%;
   width: 100%;
-  background-color: azure;
   display: flex;
 }
 
-/* 여기서 안먹네요 ㅜㅜㅜ */
 .informIndex {
   /* 왜 inline으로 하면 속성 적용이 안될까? */
-  width: 33%;
+  flex-grow: 1;
   height: 100%;
-  background-color: aquamarine;
-  border: 1px solid black;
+
+  background-color: none;
+  /* border: 1px solid black; */
+  color: white;
 }
 .checked {
-  background-color: black;
+  text-align: center;
+  line-height: 35px;
+  background: linear-gradient(
+    to right,
+    var(--accent_purple),
+    rgba(111, 87, 245, 0.4)
+  );
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 3.95px 3.95px 4.6px;
 }
 
 .footer {
   width: 100vw;
-  height: 300px;
-  background-color: deepskyblue;
+  height: 250px;
+  background-color: rgb(242, 235, 245);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }

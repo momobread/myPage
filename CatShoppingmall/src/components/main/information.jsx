@@ -3,7 +3,7 @@ import informrates from "../../../public/informrate";
 function Information({ children }) {
   return (
     <div className="informationWrap">
-      <div className="ItemListTitle_2">
+      <div className="ItemListTitle_3">
         <ContentTitle>{children}</ContentTitle>
       </div>
       <div className="InformContentWrap">
@@ -66,17 +66,19 @@ function InformRate({ indexNum, informrate }) {
   return (
     <div className="InformRate">
       <div className="informIndexWrap">
-        <span
-          className={`informIndex${indexNum == 1 ? " checked" : ""}`}
-        ></span>
-        <span
-          className={`informIndex${indexNum == 2 ? " checked" : ""}`}
-        ></span>
-        <span
-          className={`informIndex${indexNum == 3 ? " checked" : ""}`}
-        ></span>
+        <span className={`informIndex${indexNum == 1 ? " checked" : ""}`}>
+          Best리뷰
+        </span>
+        <span className={`informIndex${indexNum == 2 ? " checked" : ""}`}>
+          최근리뷰
+        </span>
+        <span className={`informIndex${indexNum == 3 ? " checked" : ""}`}>
+          Best Q & A
+        </span>
       </div>
-      <OnelineRate informrate={informrate} />
+      <div className="InformRateContent">
+        <OnelineRate informrate={informrate} />
+      </div>
     </div>
   );
 }
