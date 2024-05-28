@@ -1,7 +1,7 @@
 // import { useState } from "react";
 
-import "./components/main/style/index.css";
-import "./components/main/style/mediaquery.css";
+import "/src/style/main.css";
+import "/src/style/mediaquery.css";
 import "../public/reset.css";
 import MainPage from "./components/mainPage";
 import { useState } from "react";

@@ -174,7 +174,7 @@ body {
 }
 
 .items {
-  background-color: rgb(188, 211, 166);
+  /* background-color: var(--border_basic_1); */
   width: 22%;
   height: 80%;
   display: flex;
@@ -182,11 +182,15 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 10px;
+  border-radius: 7px;
 }
 
 .items img {
   width: 90%;
-  height: 50%;
+  height: 65%;
+  border-radius: 7px;
+  border: 1px solid var(--border_basic_1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .items span {

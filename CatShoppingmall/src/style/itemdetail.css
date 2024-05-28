@@ -1,0 +1,25 @@
+/* item info */
+.item_info_wrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.share_button span,
+.share_button {
+  width: 30px;
+  height: 30px;
+}
+.share_button span img {
+  border-radius: 7px;
+  width: 28px;
+  height: 28px;
+}
+.share_button {
+  padding: 0;
+}

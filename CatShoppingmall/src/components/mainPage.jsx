@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Header from "./header";
-import Nav from "./nav";
+import Header from "./common/header";
+import Nav from "/src/components/common/nav.jsx";
 import ADD from "./main/add";
 import ItemList from "./main/itemlist";
 import bestitems from "../../public/bestitem";
 import newitems from "../../public/newitem";
 import Recommand from "./main/recommand";
 import Information from "./main/information";
-import Footer from "./footer";
+import Footer from "./common/footer";
 
 function MainPage({ pageNum, detailContent }) {
   const [bestNum, setBestNum] = useState(0);

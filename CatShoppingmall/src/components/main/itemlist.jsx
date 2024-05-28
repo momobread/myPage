@@ -19,13 +19,13 @@ function ItemList({
         </div>
       </div>
       <div className="itemListContentWrap">
-        <button onClick={() => handlePrevious()}>-</button>
+        <button onClick={() => handlePrevious()}>previous</button>
         <ItemsContent
           items={items}
           pageNum={pageNum}
           detailContent={detailContent}
         />
-        <button onClick={() => handleNext()}>+</button>
+        <button onClick={() => handleNext()}>next</button>
       </div>
     </div>
   );
