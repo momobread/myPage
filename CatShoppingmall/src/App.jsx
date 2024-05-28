@@ -14,12 +14,17 @@ import ItemDetailPage from "./components/itemDetailPage";
 function App() {
   const [pageIndex, setPageIndex] = useState(1);
   const [itemDetail, setItemDetail] = useState([]);
+  const [backpage, setBackPage] = useState(0);
 
   function pageNum(e) {
     setPageIndex(e);
+    setBackPage(pageIndex);
   }
   function detailContent(item) {
     setItemDetail(item);
+  }
+  function handleBack() {
+    setPageIndex(backpage);
   }
 
   return (
@@ -28,7 +33,10 @@ function App() {
         <MainPage pageNum={pageNum} detailContent={detailContent} />
       )}
       {pageIndex == 2 && (
-        <ItemDetailPage itemDetail={itemDetail}></ItemDetailPage>
+        <ItemDetailPage
+          itemDetail={itemDetail}
+          handleBack={handleBack}
+        ></ItemDetailPage>
       )}
     </div>
   );
