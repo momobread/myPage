@@ -55,9 +55,8 @@ function MainPage({ pageNum, detailContent }) {
         <Recommand>Recommand</Recommand>
         <Information>Information</Information>
       </div>
-      <div className="footer">
-        <Footer />
-      </div>
+
+      <Footer />
     </>
   );
 }

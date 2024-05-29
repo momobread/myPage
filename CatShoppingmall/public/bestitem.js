@@ -1,11 +1,12 @@
 const bestitems = [
   [
     {
-      title: "고양이 캣 휠",
+      title: "고양이밥그릇",
       price: 10000,
       id: "001",
       img: "/src/assets/items/cat_table.gif",
       text: "달리고 싶은 고양이 모두 모이라옹~",
+      content: "/src/assets/itemcontent/001.png",
     },
     {
       title: "고양이 스크래치",
