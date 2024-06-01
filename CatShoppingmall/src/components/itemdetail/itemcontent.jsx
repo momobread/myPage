@@ -14,7 +14,6 @@ function ItemContent({ itemDetail }) {
         <div onClick={() => setDetailindex(22)}>상품후기</div>
         <div onClick={() => setDetailindex(23)}>상품문의</div>
       </div>
-
       {detailindex == 21 ? (
         <DetailInfo itemDetail={itemDetail} />
       ) : detailindex == 22 ? (
