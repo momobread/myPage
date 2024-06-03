@@ -22,7 +22,7 @@ function App() {
   //main 1 ....
   // detail  2....
   //login 3....
-
+  console.log("페이지 인덱스", pageIndex);
   console.log(user);
   console.log("메인페이지 로그인", islogin);
   function handleUser(v) {
@@ -57,6 +57,8 @@ function App() {
           handleBack={handleBack}
           setIslogin={setIslogin}
           user={user}
+          pageNum={pageNum}
+          pageIndex={pageIndex}
         />
       )}
     </div>
