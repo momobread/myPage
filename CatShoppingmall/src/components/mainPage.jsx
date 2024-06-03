@@ -12,6 +12,7 @@ import Footer from "./common/footer";
 function MainPage({ pageNum, detailContent }) {
   const [bestNum, setBestNum] = useState(0);
   const [newNum, setNewNum] = useState(0);
+
   function handleNextBestItem() {
     setBestNum((v) => v + 1);
   }
@@ -28,7 +29,7 @@ function MainPage({ pageNum, detailContent }) {
   return (
     <>
       <header>
-        <Header />
+        <Header pageNum={pageNum} />
       </header>
       <Nav />
       <ADD />

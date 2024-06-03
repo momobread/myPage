@@ -1,9 +1,11 @@
-function Header() {
+function Header({ pageNum }) {
   return (
     <div className="header_wrap">
       <div className="header_bar">
         <div className="login_button">
-          <a href="/loginPage/login.html">Login</a>
+          <p href="" onClick={() => pageNum(3)}>
+            Login
+          </p>
         </div>
         <div className="nav_menu">
           <img src="/src/assets/shopping_icon.png" />
