@@ -1,11 +1,11 @@
+import { useState } from "react";
+import userRate from "../../../public/userrate";
+import User from "/public/user.js";
 function ItemRate() {
   return (
     <div className="itemrate_wrap">
       <PreviewRate />
       <ReviewContent />
-      <div>좋아요 순 / 최신순 / 베스트 순</div>
-      <div>키워드 검색 🔍</div>
-      <div>별점순</div>
     </div>
   );
 }
@@ -30,7 +30,11 @@ function PreviewRate() {
       {/* <div>포장상태</div>
       <div>배송속도</div>
       <div>사용성</div> */}
-      <div>사진사진사진사진</div>
+      <div className="item_rate_img">
+        <div>리뷰 사진</div>
+        <Reviewimg />
+        <Reviewimg />
+      </div>
     </div>
   );
 }
@@ -45,29 +49,66 @@ function Ratebar({ children }) {
     </li>
   );
 }
+
+function Reviewimg() {
+  return (
+    <>
+      <img src={userRate[0].img} />
+      <img src={userRate[0].img} />
+    </>
+  );
+}
+
 function ReviewContent() {
+  const [reviewNum, setReviewNum] = useState(1);
   return (
     <div>
-      <ReviewFilter />
-      <LikeReview />
-      <BestReview />
-      <NewReview />
+      <ReviewFilter setReviewNum={setReviewNum} />
+      {reviewNum == 1 ? (
+        <LikeReview />
+      ) : reviewNum == 2 ? (
+        <BestReview />
+      ) : reviewNum == 3 ? (
+        <NewReview />
+      ) : (
+        -1
+      )}
     </div>
   );
 }
-function ReviewFilter() {
+function ReviewFilter({ setReviewNum }) {
   return (
-    <div>
-      <button>좋아요순</button>
-      <button>베스트순</button>
-      <button>최신순</button>
+    <div className="review_filter">
+      <button onClick={() => setReviewNum(1)}>좋아요순</button>
+      <button onClick={() => setReviewNum(2)}>베스트순</button>
+      <button onClick={() => setReviewNum(3)}>최신순</button>
       <button>🔍</button>
       <button>모든별점보기</button>
     </div>
   );
 }
 function LikeReview() {
-  return <div>좋아요순 리뷰입니다 - 1234 +</div>;
+  return (
+    <div>
+      좋아요순 리뷰입니다 - 1234 +
+      <LikedContent />
+    </div>
+  );
+}
+
+function LikedContent() {
+  return (
+    <div>
+      {userRate.map((user, i) => (
+        <div key={i}>
+          <div>{user.review}</div>
+          <div>{user.rate}</div>
+          <img src={user.img} width={250} />
+          <div>{User[0].id}</div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function BestReview() {
