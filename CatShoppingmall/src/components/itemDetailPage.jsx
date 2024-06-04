@@ -11,18 +11,22 @@ import "/src/style/itemdetail.css";
       <button onClick={() => handleBack()}>button</button> */
 }
 
-function ItemDetailPage({ itemDetail, handleBack }) {
+function ItemDetailPage({ itemDetail, handleBack, pageNum, islogin }) {
   return (
-    <div className="item_contentWrap">
-      <Header />
-      <Nav />
-      <div className="item_content">
-        <ItemInfo itemDetail={itemDetail} />
-        <ItemContent itemDetail={itemDetail} />
+    <>
+      <div className="back_button">
+        <button onClick={() => handleBack()}>뒤로가기</button>
       </div>
-      <Footer />
-    </div>
-
+      <div className="item_contentWrap">
+        <Header pageNum={pageNum} islogin={islogin} />
+        <Nav />
+        <div className="item_content">
+          <ItemInfo itemDetail={itemDetail} />
+          <ItemContent itemDetail={itemDetail} />
+        </div>
+        <Footer />
+      </div>
+    </>
     // 풋터 추가하기
   );
 }

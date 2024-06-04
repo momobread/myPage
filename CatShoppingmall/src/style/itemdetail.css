@@ -1,3 +1,13 @@
+:root {
+  --accent_pink: rgb(252, 171, 166);
+  --border_basic_1: rgb(214, 214, 214);
+  --border_basic_2: rgb(153, 147, 147);
+  --accent_yellow: rgb(255, 215, 130);
+  --accent_purple: rgb(174, 154, 247);
+  --accent_green: rgb(146, 248, 214);
+  --accent_blue: rgb(72, 111, 238);
+}
+
 /* item contentwrap */
 
 .item_contentWrap {
@@ -144,6 +154,95 @@
 .detailinfo img {
   width: 100%;
 }
+
+/* item_rate */
+.itemrate_wrap {
+  width: 100%;
+  height: 2000px;
+}
+.item_rate_title {
+  height: 10%;
+  font-size: 1.5em;
+  font-weight: 600;
+  width: fit-content;
+  margin-top: 10px;
+}
+.item_preview_rate_wrap {
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+  /* background-color: beige; */
+  display: flex;
+  flex-direction: column;
+}
+.item_preview_rate {
+  display: flex;
+  height: 50%;
+  border-bottom: 1px solid var(--border_basic_1);
+  border-top: 1px solid var(--border_basic_1);
+}
+.item_preview_rate ul {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  /* background-color: black; */
+}
+
+.rate_bar_content {
+  /* background-color: rgb(193, 224, 224); */
+  width: 80%;
+  height: 10%;
+
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.rate_bar_content div:nth-of-type(1) {
+  width: 200px;
+  /* background-color: aqua; */
+  font-weight: 600;
+  text-align: center;
+}
+.rate_bar_content div:nth-of-type(3) {
+  width: 100px;
+  font-weight: 500;
+  /* background-color: rgb(226, 196, 196); */
+  text-align: center;
+}
+.rate_bar_bg {
+  width: 50%;
+  height: 15px;
+  background-color: var(--border_basic_1);
+  border-radius: 12px;
+}
+
+.item_average_rate {
+  width: 40%;
+  /* background-color: rgb(194, 194, 247); */
+  border-right: 1px solid var(--border_basic_2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.item_average_rate div:nth-child(1) {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.item_average_rate div:nth-child(2) {
+  font-size: 3.5em;
+}
+
+/* item filter */
+
 /* footer */
 
 .footer {

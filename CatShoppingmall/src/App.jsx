@@ -22,9 +22,17 @@ function App() {
   //main 1 ....
   // detail  2....
   //login 3....
+
+  //대 공 사 [1,2,21,...] 스택의 길이 10
+  // 1-> 2-> 21-> 2{i-1} -> 1{i-1}  항상 뒤로가기 버튼을 누를때 index-1만큼 간다
+  // pop을 해준다.
+  //만약 스택이 다 찼으면? 가장 나중에 들어온거 지우고 맨 앞으로 민다
+
   console.log("페이지 인덱스", pageIndex);
   console.log(user);
   console.log("메인페이지 로그인", islogin);
+  console.log(pageIndex);
+  console.log(backpage, "뒤로가기 페이지 번호");
   function handleUser(v) {
     setUser((user) => [...user, v]);
   }
@@ -43,12 +51,18 @@ function App() {
   return (
     <div className="container">
       {pageIndex == 1 && (
-        <MainPage pageNum={pageNum} detailContent={detailContent} />
+        <MainPage
+          pageNum={pageNum}
+          detailContent={detailContent}
+          islogin={islogin}
+        />
       )}
       {pageIndex == 2 && (
         <ItemDetailPage
           itemDetail={itemDetail}
           handleBack={handleBack}
+          pageNum={pageNum}
+          islogin={islogin}
         ></ItemDetailPage>
       )}
       {pageIndex == 3 && (

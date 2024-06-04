@@ -12,14 +12,37 @@ function ItemRate() {
 
 function PreviewRate() {
   return (
-    <div>
-      <div>총 별점</div>
-      <div>5점</div>;<div>4점</div>;<div>3점</div>;<div>2점</div>;<div>1점</div>
-      <div>포장상태</div>
+    <div className="item_preview_rate_wrap">
+      <div className="item_rate_title">Real 후기</div>
+      <div className="item_preview_rate">
+        <div className="item_average_rate">
+          <div>총 평점</div>
+          <div>⭐️⭐️⭐️⭐️</div>
+        </div>
+        <ul>
+          <Ratebar>아주 만족해요</Ratebar>
+          <Ratebar>조금 만족해요</Ratebar>
+          <Ratebar>만족해요</Ratebar>
+          <Ratebar>조금 불만족해요</Ratebar>
+          <Ratebar>아주 불만족해요</Ratebar>
+        </ul>
+      </div>
+      {/* <div>포장상태</div>
       <div>배송속도</div>
-      <div>사용성</div>
+      <div>사용성</div> */}
       <div>사진사진사진사진</div>
     </div>
+  );
+}
+function Ratebar({ children }) {
+  return (
+    <li className="rate_bar_content">
+      <div>{children}</div>
+      <div className="rate_bar_bg">
+        <div className="rate_bar"></div>
+      </div>
+      <div> 57%</div>
+    </li>
   );
 }
 function ReviewContent() {

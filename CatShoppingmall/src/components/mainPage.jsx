@@ -9,7 +9,7 @@ import Recommand from "./main/recommand";
 import Information from "./main/information";
 import Footer from "./common/footer";
 
-function MainPage({ pageNum, detailContent }) {
+function MainPage({ pageNum, detailContent, islogin }) {
   const [bestNum, setBestNum] = useState(0);
   const [newNum, setNewNum] = useState(0);
 
@@ -29,7 +29,7 @@ function MainPage({ pageNum, detailContent }) {
   return (
     <>
       <header>
-        <Header pageNum={pageNum} />
+        <Header pageNum={pageNum} islogin={islogin} />
       </header>
       <Nav />
       <ADD />

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import User from "/public/user.js";
-import Loginmain from "/src/components/loginPage.jsx";
-import Membership from "/src/components/login/membership.jsx";
-
+import Loginmain from "/src/components/login/login.jsx";
+import Membership from "/src/components/login/member.jsx";
+import "/src/style/login.css";
 //로그인은 31...32....33.... 3의자리로
 function Login({ handleUser, handleBack, setIslogin, user, pageNum }) {
   const [id, setId] = useState("");
@@ -25,30 +25,38 @@ function Login({ handleUser, handleBack, setIslogin, user, pageNum }) {
   }
 
   return (
-    <div>
-      <button onClick={() => handleBack()}>뒤로가기</button>
-      {loginindex == 3 && (
-        <Loginmain
-          setId={setId}
-          setPw={setPw}
-          setLoginindex={setLoginindex}
-          pageNum={pageNum}
-          checkUser={checkUser}
-          id={id}
-          pw={pw}
-        />
-      )}
-      {loginindex == 31 && (
-        <>
-          <Membership
+    <div className="login_wrap">
+      <div className="login">
+        <div className="back_button">
+          {/* <button>뒤로가기</button> */}
+          <i
+            className="fa-solid fa-arrow-left fa-2xl"
+            onClick={() => handleBack()}
+          ></i>
+        </div>
+        {loginindex == 3 && (
+          <Loginmain
             setId={setId}
             setPw={setPw}
-            handleUser={handleUser}
-            NewUser={NewUser}
             setLoginindex={setLoginindex}
+            pageNum={pageNum}
+            checkUser={checkUser}
+            id={id}
+            pw={pw}
           />
-        </>
-      )}
+        )}
+        {loginindex == 31 && (
+          <>
+            <Membership
+              setId={setId}
+              setPw={setPw}
+              handleUser={handleUser}
+              NewUser={NewUser}
+              setLoginindex={setLoginindex}
+            />
+          </>
+        )}
+      </div>
     </div>
   );
 }

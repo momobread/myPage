@@ -1,12 +1,17 @@
-function Header({ pageNum }) {
+function Header({ pageNum, islogin }) {
   return (
     <div className="header_wrap">
       <div className="header_bar">
-        <div className="login_button">
+        <div className="login_button"></div>
+        {islogin ? (
+          <div className="Mypage">
+            <p>mypage</p>
+          </div>
+        ) : (
           <p href="" onClick={() => pageNum(3)}>
             Login
           </p>
-        </div>
+        )}
         <div className="nav_menu">
           <img src="/src/assets/shopping_icon.png" />
         </div>

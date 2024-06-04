@@ -19,13 +19,25 @@ function ItemList({
         </div>
       </div>
       <div className="itemListContentWrap">
-        <button onClick={() => handlePrevious()}>previous</button>
+        <span className="item_left_button">
+          <i
+            className="fa-solid fa-arrow-left fa-2xl"
+            style={{ color: "#fdcee2" }}
+            onClick={() => handlePrevious()}
+          ></i>
+        </span>
         <ItemsContent
           items={items}
           pageNum={pageNum}
           detailContent={detailContent}
         />
-        <button onClick={() => handleNext()}>next</button>
+        <span className="item_right_button">
+          <i
+            className="fa-solid fa-arrow-right fa-2xl"
+            style={{ color: "#fdcee2" }}
+            onClick={() => handleNext()}
+          ></i>
+        </span>
       </div>
     </div>
   );
