@@ -159,7 +159,7 @@
 /* item_rate */
 .itemrate_wrap {
   width: 100%;
-  height: 2000px;
+  height: 2300px;
 }
 .item_rate_title {
   height: 7%;
@@ -258,7 +258,73 @@
 
 /* item filter */
 .review_filter {
-  background-color: bisque;
+  padding: 0 20px;
+  height: 5%;
+  /* background-color: bisque; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border_basic_1);
+  border-top: 1px solid var(--border_basic_2);
+}
+.review_filter div button {
+  background-color: var(--accent_pink);
+  /* border: 2px solid var(--accent_pink);
+  background-color: white; */
+}
+
+/* review_content */
+.review_content {
+  box-sizing: border-box;
+  height: 65%;
+}
+
+/* liked content */
+
+.liked_content_wrap {
+  width: 100%;
+  height: 90%;
+  /* background-color: rgb(217, 252, 240); */
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.liked_content {
+  width: 100%;
+  height: fit-content;
+  /* box-sizing: border-box; */
+  /* background-color: blanchedalmond; */
+  border-bottom: 1px solid var(--border_basic_1);
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.liked_content img {
+  width: 200px;
+  max-height: 230px;
+}
+.liked_content div:nth-of-type(1) {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.liked_content div:nth-of-type(2) {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+.liked_content div:nth-of-type(3) {
+  font-size: 1em;
+  font-weight: 500;
+  max-width: 500px;
+}
+.liked_content div:nth-of-type(4) {
+  font-size: 1em;
+}
+
+.liked_button {
+  width: 15px;
+  height: 15px;
 }
 
 /* footer */

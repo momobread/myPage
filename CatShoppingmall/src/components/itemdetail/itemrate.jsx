@@ -62,7 +62,7 @@ function Reviewimg() {
 function ReviewContent() {
   const [reviewNum, setReviewNum] = useState(1);
   return (
-    <div>
+    <div className="review_content">
       <ReviewFilter setReviewNum={setReviewNum} />
       {reviewNum == 1 ? (
         <LikeReview />
@@ -79,18 +79,26 @@ function ReviewContent() {
 function ReviewFilter({ setReviewNum }) {
   return (
     <div className="review_filter">
-      <button onClick={() => setReviewNum(1)}>좋아요순</button>
-      <button onClick={() => setReviewNum(2)}>베스트순</button>
-      <button onClick={() => setReviewNum(3)}>최신순</button>
-      <button>🔍</button>
-      <button>모든별점보기</button>
+      <div>
+        <button onClick={() => setReviewNum(1)}>좋아요순</button>
+        <button onClick={() => setReviewNum(2)}>베스트순</button>
+        <button onClick={() => setReviewNum(3)}>최신순</button>
+      </div>
+      <div>
+        <button>🔍</button>
+        <button>모든별점보기</button>
+      </div>
     </div>
   );
 }
+function ReviewNav() {
+  return <div className="review_nav_wrap"></div>;
+}
+
 function LikeReview() {
   return (
-    <div>
-      좋아요순 리뷰입니다 - 1234 +
+    <div className="liked_content_wrap">
+      {/* 좋아요순 리뷰입니다 - 1234 + */}
       <LikedContent />
     </div>
   );
@@ -98,16 +106,23 @@ function LikeReview() {
 
 function LikedContent() {
   return (
-    <div>
+    <>
       {userRate.map((user, i) => (
-        <div key={i}>
-          <div>{user.review}</div>
-          <div>{user.rate}</div>
-          <img src={user.img} width={250} />
-          <div>{User[0].id}</div>
+        <div className="liked_content" key={i}>
+          <div className="liked_user">
+            작성자 : {user.userNum == User[i].userNum ? User[i].id : ""}
+          </div>
+          <div className="liked_title">{user.title}</div>
+          <img src={user.img} />
+          <div className="liked_review">{user.review}</div>
+          <div className="liked_rate">{"⭐️".repeat(user.rate)}</div>
+          <div>
+            <i className="fa-solid fa-heart" style={{ color: "#f7c0ed" }}></i>
+            <span>{user.liked}</span>
+          </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }
 
