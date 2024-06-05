@@ -81,7 +81,7 @@ function ReviewFilter({ setReviewNum }) {
     <div className="review_filter">
       <div>
         <button onClick={() => setReviewNum(1)}>좋아요순</button>
-        <button onClick={() => setReviewNum(2)}>베스트순</button>
+        <button onClick={() => setReviewNum(2)}>별점순</button>
         <button onClick={() => setReviewNum(3)}>최신순</button>
       </div>
       <div>
@@ -107,30 +107,80 @@ function LikeReview() {
 function LikedContent() {
   return (
     <>
-      {userRate.map((user, i) => (
-        <div className="liked_content" key={i}>
-          <div className="liked_user">
-            작성자 : {user.userNum == User[i].userNum ? User[i].id : ""}
+      {/* 객체를 sort할떄는 a.key b.key로 비교해야됌 */}
+      {[...userRate]
+        .sort((a, b) => b.liked - a.liked)
+        .map((user, i) => (
+          <div className="liked_content" key={i}>
+            <div className="liked_user">
+              작성자 :{" "}
+              {User[User.findIndex((v, i) => v.userNum == user.userNum)].id}
+            </div>
+            <div className="liked_title">{user.title}</div>
+            <img src={user.img} />
+            <div className="liked_review">{user.review}</div>
+            <div className="liked_rate">{"⭐️".repeat(user.rate)}</div>
+            <div>
+              <i className="fa-solid fa-heart" style={{ color: "#f7c0ed" }}></i>
+              <span>{user.liked}</span>
+            </div>
           </div>
-          <div className="liked_title">{user.title}</div>
-          <img src={user.img} />
-          <div className="liked_review">{user.review}</div>
-          <div className="liked_rate">{"⭐️".repeat(user.rate)}</div>
-          <div>
-            <i className="fa-solid fa-heart" style={{ color: "#f7c0ed" }}></i>
-            <span>{user.liked}</span>
-          </div>
-        </div>
-      ))}
+        ))}
     </>
   );
 }
 
 function BestReview() {
-  return <div>best review 입니다 - 1234 +</div>;
+  return (
+    <div>
+      {[...userRate]
+        .sort((a, b) => b.rate - a.rate)
+        .map((user, i) => (
+          <div className="liked_content" key={i}>
+            <div className="liked_user">
+              작성자 :{" "}
+              {User[User.findIndex((v, i) => v.userNum == user.userNum)].id}
+            </div>
+            <div className="liked_title">{user.title}</div>
+            <img src={user.img} />
+            <div className="liked_review">{user.review}</div>
+            <div className="liked_rate">{"⭐️".repeat(user.rate)}</div>
+            <div>
+              <i className="fa-solid fa-heart" style={{ color: "#f7c0ed" }}></i>
+              <span>{user.liked}</span>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
 }
+
+// 여기서부터 다시 해야됌
 function NewReview() {
-  return <div>최신순 리뷰입니다 - 1234 +</div>;
+  let date = new Date();
+  console.log(date.toLocaleString());
+  return (
+    <div>
+      {[...userRate]
+        .sort((a, b) => a.userNum - b.userNum)
+        .map((user, i) => (
+          <div className="liked_content" key={i}>
+            <div className="liked_user">
+              작성자 :{" "}
+              {User[User.findIndex((v, i) => v.userNum == user.userNum)].id}
+            </div>
+            <div className="liked_title">{user.title}</div>
+            <img src={user.img} />
+            <div className="liked_review">{user.review}</div>
+            <div className="liked_rate">{"⭐️".repeat(user.rate)}</div>
+            <div>
+              <i className="fa-solid fa-heart" style={{ color: "#f7c0ed" }}></i>
+              <span>{user.liked}</span>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
 }
 
 export default ItemRate;
