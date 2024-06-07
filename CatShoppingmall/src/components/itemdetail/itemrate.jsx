@@ -1,11 +1,14 @@
 import { useState } from "react";
 import userRate from "../../../public/userrate";
 import User from "/public/user.js";
-function ItemRate() {
+import bestitems from "../../../public/bestitem";
+function ItemRate({ itemDetail }) {
+  console.log("itemrate");
+
   return (
     <div className="itemrate_wrap">
       <PreviewRate />
-      <ReviewContent />
+      <ReviewContent itemDetail={itemDetail} />
     </div>
   );
 }
@@ -59,15 +62,15 @@ function Reviewimg() {
   );
 }
 
-function ReviewContent() {
+function ReviewContent({ itemDetail }) {
   const [reviewNum, setReviewNum] = useState(1);
   return (
     <div className="review_content">
       <ReviewFilter setReviewNum={setReviewNum} />
       {reviewNum == 1 ? (
-        <LikeReview />
+        <LikeReview itemDetail={itemDetail} />
       ) : reviewNum == 2 ? (
-        <BestReview />
+        <BestReview itemDetail={itemDetail} />
       ) : reviewNum == 3 ? (
         <NewReview />
       ) : (
@@ -85,8 +88,8 @@ function ReviewFilter({ setReviewNum }) {
         <button onClick={() => setReviewNum(3)}>최신순</button>
       </div>
       <div>
+        <button>리뷰작성하기</button>
         <button>🔍</button>
-        <button>모든별점보기</button>
       </div>
     </div>
   );
@@ -95,20 +98,46 @@ function ReviewNav() {
   return <div className="review_nav_wrap"></div>;
 }
 
-function LikeReview() {
+function LikeReview({ itemDetail }) {
   return (
     <div className="liked_content_wrap">
       {/* 좋아요순 리뷰입니다 - 1234 + */}
-      <LikedContent />
+      <LikedContent itemDetail={itemDetail} />
     </div>
   );
 }
 
-function LikedContent() {
+// 좋아요순
+function LikedContent({ itemDetail }) {
+  console.log(itemDetail);
   return (
     <>
       {/* 객체를 sort할떄는 a.key b.key로 비교해야됌 */}
+      {/* {[...userRate]
+        .sort((a, b) => b.liked - a.liked)
+        .map((user, i) => (
+          <div className="liked_content" key={i}>
+            <div className="liked_user">
+              작성자 :{" "}
+              {User[User.findIndex((v, i) => v.userNum == user.userNum)].id}
+            </div>
+            <div className="liked_title">{user.title}</div>
+            <img src={user.img} />
+            <div className="liked_review">{user.review}</div>
+            <div className="liked_rate">{"⭐️".repeat(user.rate)}</div>
+            <div>
+              <i className="fa-solid fa-heart" style={{ color: "#f7c0ed" }}></i>
+              <span>{user.liked}</span>
+            </div>
+          </div>
+        ))} */}
+
+      {/*
+         userrate의 모든 num과 bestitem의 모든 num을 비교하는것보다
+        이미가져온 userate에서 이미 가져온 객체하나를 비교하는게 더 효율적
+        */}
       {[...userRate]
+        .filter((v, i) => v.itemNum == itemDetail.itemNum)
         .sort((a, b) => b.liked - a.liked)
         .map((user, i) => (
           <div className="liked_content" key={i}>
@@ -130,10 +159,11 @@ function LikedContent() {
   );
 }
 
-function BestReview() {
+function BestReview({ itemDetail }) {
   return (
     <div>
       {[...userRate]
+        .filter((v, i) => v.itemNum == itemDetail.itemNum)
         .sort((a, b) => b.rate - a.rate)
         .map((user, i) => (
           <div className="liked_content" key={i}>

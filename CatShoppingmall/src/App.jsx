@@ -42,6 +42,8 @@ function App() {
     setBackPage(pageIndex);
   }
   function detailContent(item) {
+    console.log(item);
+
     setItemDetail(item);
   }
   function handleBack() {

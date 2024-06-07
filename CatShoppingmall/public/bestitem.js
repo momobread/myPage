@@ -7,6 +7,7 @@ const bestitems = [
       img: "/src/assets/items/cat_table.gif",
       text: "달리고 싶은 고양이 모두 모이라옹~",
       content: "/src/assets/itemcontent/001.png",
+      itemNum: "001",
     },
     {
       title: "고양이 스크래치",
@@ -14,6 +15,7 @@ const bestitems = [
       id: "002",
       img: "/src/assets/items/cat_toy_1.gif",
       text: "긁어긁어긁어라옹",
+      itemNum: "002",
     },
     {
       title: "고양이 캣 휠",
@@ -21,6 +23,7 @@ const bestitems = [
       id: "003",
       img: "/src/assets/items/cat키약.webp",
       text: "달리고 싶은 고양이 모두 모이라옹~",
+      itemNum: "003",
     },
     {
       title: "고양이 스크래치",

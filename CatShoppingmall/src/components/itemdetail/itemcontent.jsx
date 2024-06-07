@@ -17,7 +17,7 @@ function ItemContent({ itemDetail }) {
       {detailindex == 21 ? (
         <DetailInfo itemDetail={itemDetail} />
       ) : detailindex == 22 ? (
-        <ItemRate />
+        <ItemRate itemDetail={itemDetail} />
       ) : (
         <ItemQA />
       )}

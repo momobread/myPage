@@ -4,7 +4,7 @@ import ContentTitle from "./contentTitle";
 
 function ItemList({
   children,
-  items,
+  items, //bestitems[0] bestitems[1]
   handleNext,
   handlePrevious,
   pageNum,
@@ -59,8 +59,8 @@ function ItemsContent({ items, pageNum, detailContent }) {
         {/* items &&를 붙여야 데이터를 받아왔을때 뒤에 조건을 수행한다 */}
         {/* react가 item 데이터가 오기 전에 바로 랜더링 하려고 하기 때문에  undefined에러 뜬다*/}
 
-        {items &&
-          items.map((item) => (
+        {items && //[{...},{...},{...},{...}]
+          items.map((item, i) => (
             <li
               key={item.id}
               className="items"
