@@ -8,6 +8,10 @@
   --accent_blue: rgb(72, 111, 238);
 }
 
+.item_content {
+  display: flex;
+  flex-direction: column;
+}
 /* item contentwrap */
 
 .item_contentWrap {

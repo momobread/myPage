@@ -2,6 +2,7 @@ import DetailInfo from "/src/components/itemdetail/itemdetailinfo.jsx";
 import ItemRate from "/src/components/itemdetail/itemrate.jsx";
 import ItemQA from "/src/components/itemdetail/itemqa.jsx";
 import { useState } from "react";
+
 function ItemContent({ itemDetail }) {
   const [detailindex, setDetailindex] = useState(21);
 
