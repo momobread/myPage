@@ -2,13 +2,13 @@ import { useState } from "react";
 import userRate from "../../../public/userrate";
 import User from "/public/user.js";
 import bestitems from "../../../public/bestitem";
-function ItemRate({ itemDetail }) {
+function ItemRate({ itemDetail, detailindex }) {
   console.log("itemrate");
 
   return (
     <div className="itemrate_wrap">
       <PreviewRate />
-      <ReviewContent itemDetail={itemDetail} />
+      <ReviewContent itemDetail={itemDetail} detailindex={detailindex} />
     </div>
   );
 }
@@ -62,11 +62,15 @@ function Reviewimg() {
   );
 }
 
-function ReviewContent({ itemDetail }) {
+function ReviewContent({ itemDetail, detailindex }) {
   const [reviewNum, setReviewNum] = useState(1);
   return (
     <div className="review_content">
-      <ReviewFilter setReviewNum={setReviewNum} />
+      <ReviewFilter
+        setReviewNum={setReviewNum}
+        detailindex={detailindex}
+        reviewNum={reviewNum}
+      />
       {reviewNum == 1 ? (
         <LikeReview itemDetail={itemDetail} />
       ) : reviewNum == 2 ? (
@@ -79,13 +83,28 @@ function ReviewContent({ itemDetail }) {
     </div>
   );
 }
-function ReviewFilter({ setReviewNum }) {
+function ReviewFilter({ setReviewNum, detailindex, reviewNum }) {
   return (
     <div className="review_filter">
       <div>
-        <button onClick={() => setReviewNum(1)}>좋아요순</button>
-        <button onClick={() => setReviewNum(2)}>별점순</button>
-        <button onClick={() => setReviewNum(3)}>최신순</button>
+        <button
+          className={`filter1${reviewNum == 1 ? "_clicked" : ""}`}
+          onClick={() => setReviewNum(1)}
+        >
+          좋아요순
+        </button>
+        <button
+          className={`filter2${reviewNum == 2 ? "_clicked" : ""}`}
+          onClick={() => setReviewNum(2)}
+        >
+          별점순
+        </button>
+        <button
+          className={`filter3${reviewNum == 3 ? "_clicked" : ""}`}
+          onClick={() => setReviewNum(3)}
+        >
+          최신순
+        </button>
       </div>
       <div>
         <button>리뷰작성하기</button>

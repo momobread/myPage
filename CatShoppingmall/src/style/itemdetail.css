@@ -141,6 +141,11 @@
   border: 1px solid var(--border_basic_2);
   line-height: 3;
 }
+.nav_1_clicked,
+.nav_2_clicked,
+.nav_3_clicked {
+  background-color: var(--accent_pink);
+}
 
 /* Detailinfo */
 .detailinfo_wrap {
@@ -272,11 +277,15 @@
   border-top: 1px solid var(--border_basic_2);
 }
 .review_filter div button {
-  background-color: var(--accent_pink);
-  /* border: 2px solid var(--accent_pink);
-  background-color: white; */
+  /* background-color: var(--accent_pink); */
+  border: 2px solid var(--accent_pink);
+  /*  background-color: white; */
 }
-
+.filter1_clicked,
+.filter2_clicked,
+.filter3_clicked {
+  background-color: var(--accent_pink);
+}
 /* review_content */
 .review_content {
   box-sizing: border-box;

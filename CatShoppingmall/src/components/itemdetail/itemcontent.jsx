@@ -11,14 +11,31 @@ function ItemContent({ itemDetail }) {
   return (
     <div className="itemcontent_wrap">
       <div className="itemcontent_nav">
-        <div onClick={() => setDetailindex(21)}>상품상제정보</div>
-        <div onClick={() => setDetailindex(22)}>상품후기</div>
-        <div onClick={() => setDetailindex(23)}>상품문의</div>
+        {/* <div onClick={() => setDetailindex(21)} >상품상제정보</div> */}
+        <div
+          className={`nav_1${detailindex == 21 ? "_clicked" : ""}`}
+          onClick={() => setDetailindex(21)}
+        >
+          상품상제정보
+        </div>
+        <div
+          className={`nav_2${detailindex == 22 ? "_clicked" : ""}`}
+          onClick={() => setDetailindex(22)}
+        >
+          상품후기
+        </div>
+        <div
+          className={`nav_3${detailindex == 23 ? "_clicked" : ""}`}
+          onClick={() => setDetailindex(23)}
+        >
+          상품문의
+        </div>
       </div>
+
       {detailindex == 21 ? (
         <DetailInfo itemDetail={itemDetail} />
       ) : detailindex == 22 ? (
-        <ItemRate itemDetail={itemDetail} />
+        <ItemRate itemDetail={itemDetail} detailindex={detailindex} />
       ) : (
         <ItemQA />
       )}
